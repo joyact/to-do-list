@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TodoItem from './TodoItem';
 
 const ListBlock = styled.div`
   flex: 1; // 차지할 수 있는 모든 영역 차지
@@ -9,7 +10,11 @@ const ListBlock = styled.div`
 `;
 
 function TodoList() {
-  return <ListBlock>To Do List</ListBlock>;
+  return (
+    <ListBlock>
+      <TodoItem />
+    </ListBlock>
+  );
 }
 
 export default TodoList;
