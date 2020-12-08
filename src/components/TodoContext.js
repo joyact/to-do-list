@@ -60,13 +60,25 @@ export function TodoProvider({ children }) {
 }
 
 export function useTodoState() {
-  return useContext(StateContext);
+  const context = useContext(StateContext);
+  if (!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context;
 }
 
 export function useTodoDispatch() {
-  return useContext(DispatchContext);
+  const context = useContext(DispatchContext);
+  if (!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context;
 }
 
 export function useTodoNextId() {
-  return useContext(NextIdContext);
+  const context = useContext(NextIdContext);
+  if (!context) {
+    throw new Error('Cannot find TodoProvider');
+  }
+  return context;
 }
