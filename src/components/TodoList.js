@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTodoState } from './TodoContext';
 import TodoItem from './TodoItem';
 
 const ListBlock = styled.div`
@@ -10,6 +11,8 @@ const ListBlock = styled.div`
 `;
 
 function TodoList() {
+  const state = useTodoState();
+  console.log(state);
   return (
     <ListBlock>
       <TodoItem text="프로젝트 생성하기" done={true} />
